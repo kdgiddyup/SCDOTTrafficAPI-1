@@ -1,0 +1,23 @@
+{
+  "name": "realtimetraffic",
+  "version": "1.0.0",
+  "description": "Scrapes SC DOT real-time traffic pages to return traffic data to Hilton Head Island Packet",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "body-parser": "^1.15.0",
+    "cheerio": "^1.0.0-rc.1",
+    "cors": "^2.8.4",
+    "dotenv": "^4.0.0",
+    "express": "^4.13.4",
+    "lodash": "^4.17.4",
+    "morgan": "^1.8.2",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1"
+  },
+  "author": "github.com/kdgiddyup",
+  "license": "ISC"
+}
