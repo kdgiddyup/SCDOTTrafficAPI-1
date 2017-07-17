@@ -19,6 +19,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" })); 
 
 // Static directory
+console.log("Path:",__dirname);
 app.use(express.static(__dirname + "/public"));
 
 // ===================================================
@@ -30,9 +31,6 @@ app.use(express.static(__dirname + "/public"));
 
 require("./routes/apiroutes")(app);
 require("./routes/htmlroutes")(app);
-
-// google map api key is 
-var GAPI = process.env.G_API_AUTH;
 
 // Sets an initial port. We"ll use this later in our listener
 var PORT = process.env.PORT || 8080;
