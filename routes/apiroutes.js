@@ -22,10 +22,22 @@ module.exports = function(app) {
         };
                
         request(options).then(function ($) {
+            let data ={ 
+                actualDir1:[],
+                histDir1:[],
+                speedDir1:[],
+                actualDir2:[],
+                histDir2:[],
+                speedDir2:[]
+            };
             // push rows of class .rowWhiteDisplay and .rowNormalDisplay into data array
-            let data = [];           
-            $(".rowWhiteDisplay,.rowNormalDisplay").each( (index,row) => {
-                data.push($(row).html());
+            $(".rowWhiteDisplay,.rowNormalDisplay").each( (rowIndex,row) => {
+                data.actualDir1[rowIndex] = $(row).children("td").eq(1).html();
+                data.histDir1[rowIndex] = $(row).children("td").eq(2).html();
+                data.speedDir1[rowIndex] = $(row).children("td").eq(3).html();
+                data.actualDir2[rowIndex] = $(row).children("td").eq(4).html();
+                data.histDir2[rowIndex] = $(row).children("td").eq(5).html();
+                data.speedDir2[rowIndex] = $(row).children("td").eq(6).html();
             });
             
             res.json( data );
