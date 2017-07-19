@@ -28,8 +28,12 @@ module.exports = function(app) {
                 speedDir1:[],
                 actualDir2:[],
                 histDir2:[],
-                speedDir2:[]
+                speedDir2:[],
+                dirNames:[]
             };
+            data.dirNames[0] = $(".tableHead").children("th").eq(1).html();
+            data.dirNames[1] = $(".tableHead").children("th").eq(2).html();
+
             // push rows of class .rowWhiteDisplay and .rowNormalDisplay into data array
             $(".rowWhiteDisplay,.rowNormalDisplay").each( (rowIndex,row) => {
                 data.actualDir1[rowIndex] = $(row).children("td").eq(1).html();
